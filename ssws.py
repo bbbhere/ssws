@@ -14,7 +14,7 @@ async def remotereader(key, reader, ws):
 
     while True:
         get_text = await reader.read(4096)
-        logger.debug('reader data:  %r' % get_text)
+        #logger.debug('reader data:  %r' % get_text)
         if get_text==b'':
             break
         else:
@@ -26,7 +26,7 @@ async def remotewriter(writer, queue):
 
     while True:
         get_text = await queue.get()
-        logger.debug('prepare writer data:  %r' % get_text)
+        #logger.debug('prepare writer data:  %r' % get_text)
         if get_text is None:
             # the producer emits None to indicate that it is done
             break
